@@ -332,9 +332,11 @@ nav.categories ul li:last-child {
     margin-bottom: 35px;
 }
 .publication h1 {
-    margin-bottom: 10px;
-    font-size: 130%;
+    margin: 20px 0 30px 0;
+    font-size: 200%;
     line-height: 110%;
+    letter-spacing: -1px;
+    color: #222;
 }
 .publication h1 a {
     color: #333333;
@@ -365,6 +367,9 @@ nav.categories ul li:last-child {
 .publication-text {
     margin-top: 10px;
     font-size: 90%;
+}
+.publication-text .subtitle {
+    margin: 20px 0;
 }
 
 .latest-posts.category-page {

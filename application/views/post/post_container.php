@@ -24,6 +24,7 @@
                         </span><!-- end div.photo-caption -->
                     </div><!-- end div.main-photo -->
                     <div class="publication-text">
+                        <h2 class="subtitle"><?php print $post->post_row['post_subtitle']; ?></h2>
                         <?php print $post->post_row['post_content']; ?>
                     </div><!-- end div.publication-text -->
                 </div><!-- end div.publication -->
@@ -83,44 +84,7 @@
 
             </div><!-- end div.content-inner -->
         </div><!-- end div.content -->
-
-
-
-
         <?php
-        $post_id = $_GET['id'];
-
-        $db = new Database();
-        $db->query("SELECT * from posts WHERE post_id = '$post_id'");
-        $rows = $db->resultset();
-
-
-        foreach ($rows as $row) {
-
-            print "<h2>" . $row['post_title'] . "</h2>";
-            print "<br><br>";
-            print $row['post_published_date'];
-            print "<br><br>";
-            print "<h3>" . $row['post_subtitle'] . "</h3>";
-            print "<br><br>";
-            print $row['post_content'];
-        }
-
-        print "<br><br>";
-        print "Comments";
-        print "<br><br>";
-
-
-        $db->query("SELECT * from comments WHERE post_id = '$post_id'");
-        $rows_comments = $db->resultset();
-
-
-        foreach ($rows_comments as $row_comments) {
-            print "Name: " . $row_comments['comment_author'];
-            print "<br>";
-            print $row_comments['comment_date'];
-            print "<br>";
-            print $row_comments['comment_content'];
-            print "<br><br>";
-        }
+        include_once VIEWS_PATH . 'sidebar/sidebar.php';
         ?>
+        <div class="clearfix"></div>
